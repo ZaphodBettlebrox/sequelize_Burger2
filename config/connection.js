@@ -16,7 +16,7 @@ if(process.env.JAWSDB_URL){
 });
 }
 var sequelize = new Sequelize("burgers_db", "root", "password", {
-  host: "localhost",
+  host: "ctgplw90pifdso61.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
   port: 3306,
   dialect: "mysql",
   define: {
