@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var burger = require("../models/burger.js");
-
+// var burger = require("../models/burger.js");
+var db = require("../models")
 router.get("/", function(req, res) {
-  burger.findAll({raw:true}).then(function(data) {
+  db.burger.findAll({raw:true}).then(function(data) {
     console.log(data);
     
     var result = {
@@ -17,7 +17,7 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
 
-  burger.create({
+  db.burger.create({
     burger_name: req.body.burger_name,
     devoured: req.body.devoured
   }).then(function (result) {
@@ -30,7 +30,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
   console.log("condition", condition);
 
-  burger.update(
+  db.burger.update(
     {devoured: req.body.devoured},
     {where :{id: req.params.id}
     }
@@ -43,7 +43,7 @@ router.put("/api/burgers/:id", function(req, res) {
 
 router.delete("/api/burgers/:id", function(req, res) {
 
-  burger.destroy({
+  db.burger.destroy({
     where:{
       id: req.params.id
     }

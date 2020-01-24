@@ -10,14 +10,18 @@ app.use(express.json());
 app.use(express.static("public"));
 
 var exphbs = require("express-handlebars");
-
+// Requiring our models for syncing
+var db = require("./models");
 var routes = require("./controllers/burgers_controllers.js");
 app.use(routes);
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-  app.listen(PORT, function() {
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
 
+
+db.sequelize.sync({ force: false }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT http://localhost:" + PORT);
+  });
+});
