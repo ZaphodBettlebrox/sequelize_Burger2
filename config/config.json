@@ -1,31 +1,22 @@
-
 {
   "development": {
-    "username": "roiwufv19t5fpusum9",
-    "password": "brkhdtickhdahk14",
-    "database": "seqburgers_db",
-    "host": "ctgplw90pifdso61.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "password",
+    "database": "database_development",
+    "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306,
     "operatorsAliases": false
   },
   "test": {
-    "username": "iwufv19t5fpusum9",
-    "password": "brkhdtickhdahk14",
+    "username": "root",
+    "password": "password",
     "database": "database_test",
-    "host": "ctgplw90pifdso61.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306,
     "operatorsAliases": false
   },
   "production": {
-    "use_env_varibale": "JAWSDB_URL",
-    "username": "iwufv19t5fpusum9",
-    "password": "brkhdtickhdahk14",
-    "database": "database_production",
-    "host": "ctgplw90pifdso61.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-    "dialect": "mysql",
-    "port": 3306,
-    "operatorsAliases": false
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
   }
 }
